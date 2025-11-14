@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Official Employees - StarMaker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .employees-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Tablet: 2 columns */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .employees-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .employees-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .employees-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .employees-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .employees-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            align-items: stretch;
+            margin-bottom: 40px;
+        }
+
+        .employee-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+            cursor: pointer;
+            height: 100%;
+        }
+
+        .employee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .employee-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0;
+            background: linear-gradient(135deg, #f04e7b 0%, #2196f3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .employee-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .employee-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .employee-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .employee-role {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .employee-id {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .back-link a {
+            color: #1877f2;
+            text-decoration: underline;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .back-link a:hover {
+            color: #0e5aa7;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+
+        .empty-state i {
+            font-size: 64px;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+
+        @media (max-width: 768px) {
+            .employees-title {
+                font-size: 24px;
+            }
+
+            .employees-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .employee-card {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            .employee-avatar {
+                margin: 0 auto 12px;
+            }
+
+            .employee-info {
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="employees-container">
+        <!-- Header -->
+        <div class="employees-header">
+            <div class="logo-container" style="margin-bottom: 20px;">
+                <div class="logo">
+                    <img src="logo.svg" alt="StarMaker Logo" class="logo-img" style="width: 80px; height: 80px;">
+                </div>
+            </div>
+            <h1 class="employees-title">Our Official Employees</h1>
+            <p class="employees-subtitle">Meet the team behind StarMaker</p>
+        </div>
+
+        <!-- Employees Grid -->
+        <div class="employees-grid" id="employeesGrid">
+            <!-- Employee cards will be populated here -->
+            <div class="empty-state">
+                <i class="fas fa-users"></i>
+                <p>Employee information will be displayed here.</p>
+            </div>
+        </div>
+
+        <!-- Back Link -->
+        <div class="back-link">
+            <a href="index.html">← Back to Login</a>
+        </div>
+    </div>
+
+    <script src="employees.js"></script>
+</body>
+</html>
+
